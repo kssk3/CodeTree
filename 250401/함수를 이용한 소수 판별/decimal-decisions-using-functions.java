@@ -14,6 +14,7 @@ public class Main {
         int sum = 0;
         for(int i = a; i <= b; i++){
             if(isPrime(i)){
+                if(i == 1){continue;}
                 sum += i;
             }
         }
