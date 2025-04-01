@@ -19,11 +19,18 @@ public class Main {
     }
 
     private static boolean isMasicNumber(int n){
-        return n % 3 == 0 || Games(n);
+        return n % 3 == 0 || contains369(n);
+    }
+
+    private static boolean contains369(int n){
+        String number = Integer.toString(n);
+        for(int i = 0; i < number.length(); i++){
+            char c = number.charAt(i);
+            if(c == '3' || c == '6' || c == '9'){
+                return true;
+            }
+        }
+        return false;
     }
     
-    private static boolean Games(int n){
-        return (n % 10 == 3 || n % 10 == 6 || n % 10 == 9) || 
-        (n / 10 == 3 || n / 10 == 6 || n / 10 == 9);
-    }
 }
