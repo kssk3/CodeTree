@@ -24,10 +24,14 @@ public class Main {
         int lenB = strB.length();
 
         for(int i = 0; i <= lenA - lenB; i++){
+            if(count > 0){
+                break;
+            }
             for(int j = 0; j < lenB; j++){
                 if(strA.charAt(i+j) == strB.charAt(j)){
                     if(strA.charAt(i + (lenB - 1)) == strB.charAt(lenB - 1)){
                         count = i;
+                        break;
                     }
                 }else{ 
                     break;
