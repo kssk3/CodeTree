@@ -22,11 +22,10 @@ public class Main {
             }
         }
 
-        if(count > 1){
+        if(count >= 1){
             System.out.println("Yes");
         }else{
             System.out.println("No");
         }
     }
-
 }
