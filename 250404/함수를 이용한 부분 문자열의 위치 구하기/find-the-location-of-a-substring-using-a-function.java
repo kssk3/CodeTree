@@ -1,43 +1,26 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
-
-    public static String strA;
-    public static String strB;
-    public static int count = -1;
-    public static boolean result;
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        strA = sc.next();
-        strB = sc.next();
-
-        findLine(strA, strB);
-
-        System.out.println(count);
+        String strA = sc.next();
+        String strB = sc.next();
+        System.out.println(findFirstIndex(strA, strB));
     }
 
-    private static void findLine(String strA, String strB){
-        int cnt = 0;
-        int lenA = strA.length();
-        int lenB = strB.length();
-
-        for(int i = 0; i <= lenA - lenB; i++){
-            if(count > 0){
-                break;
-            }
-            for(int j = 0; j < lenB; j++){
-                if(strA.charAt(i+j) == strB.charAt(j)){
-                    if(strA.charAt(i + (lenB - 1)) == strB.charAt(lenB - 1)){
-                        count = i;
-                        break;
-                    }
-                }else{ 
+    private static int findFirstIndex(String a, String b) {
+        if (a.length() < b.length()) return -1;
+        
+        for (int i=0; i<=a.length()-b.length(); i++) {
+            boolean isMatch = true;
+            for (int j=0; j<b.length(); j++) {
+                if (a.charAt(i+j) != b.charAt(j)) {
+                    isMatch = false;
                     break;
                 }
             }
+            if (isMatch) return i;
         }
+        return -1;
     }
-
 }
