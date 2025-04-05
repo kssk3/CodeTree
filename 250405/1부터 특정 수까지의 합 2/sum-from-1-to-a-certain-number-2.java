@@ -16,6 +16,6 @@ public class Main {
 
     private static int factorial(int n) {
         if (n == 1) return 1; // 종료 조건 추가: 0! = 1
-        return factorial(n - 1) + ;
+        return factorial(n - 1) + n;
     }
 }
