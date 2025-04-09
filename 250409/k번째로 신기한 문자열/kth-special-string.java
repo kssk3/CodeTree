@@ -12,15 +12,14 @@ public class Main {
 
         for(int i = 0; i < n; i++){
             String text = sc.next();
-            if(text.contains(s)){
+            if(text.startsWith(s)){
                 list.add(text);
             }
         }
 
         Collections.sort(list);
 
-        String str = list.get(k);
-
+        String str = list.get(k-1);
         System.out.println(str);
     }
 }
