@@ -6,10 +6,15 @@ public class Main {
         int n = sc.nextInt();
         int k = sc.nextInt();
 
+        String s = sc.next();
+
         ArrayList<String> list = new ArrayList();
 
         for(int i = 0; i < n; i++){
-            list.add(sc.next());
+            String text = sc.next();
+            if(text.contains(s)){
+                list.add(text);
+            }
         }
 
         Collections.sort(list);
