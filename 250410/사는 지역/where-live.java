@@ -13,9 +13,16 @@ public class Main {
             people[i] = new Person(a,b,c);
         }
 
-        int k = ((int)(people[0].name.charAt(0)));
+        int k = 0;
+        // for(int i = 1; i < n; i++){
+        //     if(people[i-1].name.charAt(0) < people[i].name.charAt(0)){
+        //         k = i;
+        //     }
+        // }
+        // people[k].InfoPrint();
+
         for(int i = 1; i < n; i++){
-            if(people[i-1].name.charAt(0) < people[i].name.charAt(0)){
+            if(people[i].name.compareTo(people[k].name) > 0){
                 k = i;
             }
         }
