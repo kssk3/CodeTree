@@ -13,22 +13,18 @@ public class Main {
             data[i] = new Data(a,b,c);
         }
 
-        int k = 0;
-        for(int i = 1; i < n; i++){
-            if(data[i].date.compareTo(data[k].date) < 0){
-                k = i;
-            }
-        }
 
-        int count = 0;
-        for(int i = k; i < n; i++){
+        Data rainDay = null;
+        for(int i = 0; i < n; i++){
             if(data[i].weather.equals("Rain")){
-                count = i;
-                break;
+                if(rainDay == null || data[i].date.compareTo(rainDay.date) < 0){
+                    rainDay = data[i];
+                }
             }
         }
 
-        data[count].InfoPrint();
+
+        rainDay.InfoPrint();
     }
 }
 
