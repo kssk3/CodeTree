@@ -16,13 +16,30 @@ public class Main {
             students[i] = new Student(name,he,we);
         }
 
-        Arrays.sort(students, new Comparator<String>(){
+        Arrays.sort(students, new Comparator<Student>(){
             @Override
-        }
-        
-        );
+            public int compare(Student s1, Student s2){
+                return s1.name.charAt(0) - s2.name.charAt(0);
+            }
+        });
 
         System.out.println("name");
+        for(Student s : students){
+            System.out.print(s.name + " ");
+            System.out.print(s.height + " ");
+            System.out.println(s.weight);
+        }
+        
+        System.out.println();
+
+        Arrays.sort(students, new Comparator<Student>(){
+            @Override
+            public int compare(Student s1, Student s2){
+                return s2.height - s1.height;
+            }
+        });
+
+        System.out.println("height");
         for(Student s : students){
             System.out.print(s.name + " ");
             System.out.print(s.height + " ");
