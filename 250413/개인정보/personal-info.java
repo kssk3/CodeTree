@@ -19,7 +19,7 @@ public class Main {
         Arrays.sort(students, new Comparator<Student>(){
             @Override
             public int compare(Student s1, Student s2){
-                return s1.name.charAt(0) - s2.name.charAt(0);
+                return s1.name.compareTo(s2.name);
             }
         });
 
@@ -29,7 +29,7 @@ public class Main {
             System.out.print(s.height + " ");
             System.out.println(s.weight);
         }
-        
+
         System.out.println();
 
         Arrays.sort(students, new Comparator<Student>(){
