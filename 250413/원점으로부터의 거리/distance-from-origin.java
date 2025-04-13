@@ -17,8 +17,8 @@ public class Main {
         Arrays.sort(pointer, new Comparator<Point>(){
             @Override
             public int compare(Point a, Point b){
-                int abs1 = Math.abs(a.x + a.y);
-                int abs2 = Math.abs(b.x + b.y);
+                int abs1 = Math.abs(a.x) + Math.abs(a.y);
+                int abs2 = Math.abs(b.x) + Math.abs(b.y);
 
                 if(abs1 == abs2){
                     return a.number - b.number;
