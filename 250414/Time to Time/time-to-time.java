@@ -6,11 +6,11 @@ public class Main {
 
         int h1 = sc.nextInt();
         int m1 = sc.nextInt();
-        Time timeA = new Time(h1%10,m1);
+        Time timeA = new Time(h1%12,m1);
 
         int h2 = sc.nextInt();
         int m2 = sc.nextInt();
-        Time timeB = new Time(h2%10,m2);
+        Time timeB = new Time(h2%12,m2);
 
         System.out.println(timeB.sum() - timeA.sum());
         
