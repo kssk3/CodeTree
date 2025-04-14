@@ -11,15 +11,13 @@ public class Main {
         Day dayA = new Day(11, 11, 11);
         Day dayB = new Day(y,m,d);
 
-        if(validate(dayA, dayB)){
+        if(dayB.sum() > dayA.sum()){
+            System.out.println(dayB.sum() - dayA.sum());
+        }else if(dayB.sum() == dayA.sum()){
             System.out.println(dayB.sum() - dayA.sum());
         }else{
             System.out.println("-1");
         }
-    }
-
-    public static boolean validate(Day d1, Day d2){
-        return d2.sum() > d1.sum();
     }
 }
 
