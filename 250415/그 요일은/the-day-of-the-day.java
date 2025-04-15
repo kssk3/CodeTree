@@ -15,21 +15,24 @@ public class Main {
         int m2 = sc.nextInt();
         int d2 = sc.nextInt();
 
-        int total = totalDays(m2, d2) - totalDays(m1, d1);
-        String s = sc.next();
+        int total = totalDays(m2,d2) - totalDays(m1,d1);
+        String str1 = sc.next();
 
-        System.out.println(total/7 + 1);
-
-
+        int count = 0;
+        for(int i = 0; i <= total; i++){
+            String current = day[(total - i)%7];
+            if(current.equals(str1)){
+                count++;
+            }
+        }
+        System.out.println(count);
     }
 
     public static int totalDays(int m, int d){
         int total = 0;
-
         for(int i = 1; i < m; i++){
             total += day_of_month[i];
         }
-
         return total + d;
     }
 }
