@@ -17,15 +17,29 @@ public class Main {
         int d2 = sc.nextInt();
         int sum2 = sum(m2,d2);
 
-        if(sum1 > sum2){
+        if(sum1 <= sum2){
+            int number = sum2 - sum1;
+            switch(number%7){
+                case 0 : System.out.println("Mon"); break;
+                case 1 : System.out.println("Tue"); break;
+                case 2 : System.out.println("Wed"); break;
+                case 3 : System.out.println("Thu"); break;
+                case 4 : System.out.println("Fri"); break;
+                case 5 : System.out.println("Sat"); break;
+                case 6 : System.out.println("Sun"); break;
+                default : System.out.println("없음");break;
+            }
+        }else{
             int number = sum1 - sum2;
             switch(number%7){
-                case 0 : System.out.println("Mon"); default;
-                case 1 : System.out.println("Tue"); default;
-                case 2 : System.out.println("Wed"); default;
-                case 3 : System.out.println("Thu"); default;
-                case 4 : System.out.println("Fri"); default;
-
+                case 1 : System.out.println("Sun"); break;
+                case 2 : System.out.println("Sat"); break;
+                case 3 : System.out.println("Fri"); break;
+                case 4 : System.out.println("Thu"); break;
+                case 5 : System.out.println("Wed"); break;
+                case 6 : System.out.println("Tue"); break;
+                case 0 : System.out.println("Mon"); break;
+                default : System.out.println("없음");break;
             }
         }
     }
