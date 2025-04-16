@@ -17,8 +17,7 @@ public class Main {
         int count = 0;
 
         while(true){
-            if(num < 2){
-                arr[count++] = num;
+            if(num < 1){
                 break;
             }
             arr[count++] = num % b;
