@@ -22,7 +22,7 @@ public class Main {
             }
 
             if(c == 'L'){
-                for(int j = num; j >= num - a; j--){
+                for(int j = num - 1; j >= num - a; j--){
                     arr[j]++;
                 }
                 num -= a; 
