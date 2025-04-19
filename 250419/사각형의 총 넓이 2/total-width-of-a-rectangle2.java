@@ -6,7 +6,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 
-        int[][] arr = new int[201][201];
+        int[][] arr = new int[20_001][20_001];
 
         int count = 0;
 
@@ -23,8 +23,8 @@ public class Main {
             }
         }
 
-        for(int x = 0; x < 201; x++){
-            for(int y = 0; y < 201; y++){
+        for(int x = 0; x < 20_001; x++){
+            for(int y = 0; y < 20_001; y++){
                 if(arr[x][y] > 0){count++;}
             }
         }
