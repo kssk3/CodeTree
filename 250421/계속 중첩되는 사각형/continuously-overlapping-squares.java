@@ -43,7 +43,7 @@ public class Main {
             }
         }
         if(result){
-            System.out.println();
+            System.out.println(cnt);
         }else{
             System.out.println(0);
         }
