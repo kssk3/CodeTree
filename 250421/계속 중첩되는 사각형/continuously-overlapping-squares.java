@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Main {
 
-    public static final int MAX = 2001;
-    public static final int OFFSET = 1000;
+    public static final int MAX = 201;
+    public static final int OFFSET = 100;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -43,7 +43,7 @@ public class Main {
             }
         }
         if(result){
-            System.out.println(cnt);
+            System.out.println();
         }else{
             System.out.println(0);
         }
