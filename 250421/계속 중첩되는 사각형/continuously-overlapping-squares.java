@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Main {
 
-    public static final int MAX = 201;
-    public static final int OFFSET = 100;
+    public static final int MAX = 2001;
+    public static final int OFFSET = 1000;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -30,26 +30,20 @@ public class Main {
                 }
             }    
         }
-
-        int minX = MAX;
-        int maxX = -1;
-        int minY = MAX;
-        int maxY = -1;
+        
         boolean result = false;
-
+        
+        int cnt = 0;
         for(int x = 0; x < arr.length; x++){
             for(int y = 0; y < arr[x].length; y++){
                 if(arr[x][y] == 2){
-                    minX = Math.min(minX, x);
-                    maxX = Math.max(maxX, x);
-                    minY = Math.min(minY, y);
-                    maxY = Math.max(maxY, y);
+                    cnt++;
                     result = true;
                 }
             }
         }
         if(result){
-            System.out.println((maxX - minX + 1) * (maxY - minY + 1));
+            System.out.println(cnt);
         }else{
             System.out.println(0);
         }
