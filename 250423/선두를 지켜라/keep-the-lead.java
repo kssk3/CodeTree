@@ -15,13 +15,21 @@ public class Main {
         int positionsA = movedPosition(posA,n,sc);
         int positionsB = movedPosition(posB,m,sc);
 
-        // ====== Added by Codetree ======
-        // longDistance는 누적 거리입니다. 여기서 시뮬레이션 초의 총 개수와 비교하지 않았는지 확인해보세요.
-        // ====== Added by Codetree ======
+        int maxPosition = Math.min(positionsA, positionsB);
+
         int count = 0;
-        for(int i = 1; i < Math.min(positionsA, positionsB); i++){
-            if(posB[i] > posA[i] && posB[i - 1] <= posA[i - 1]){
-                count++;
+        int lastLeader = 0;
+        for(int i = 1; i < maxPosition; i++){
+            if(posA[i] > posB[i]){
+                if(lastLeader == 2){
+                    count++;
+                }
+                lastLeader = 1;
+            }else{
+                if(lastLeader == 1){
+                    count++;
+                }
+                lastLeader = 2;
             }
         }
 
