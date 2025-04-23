@@ -25,7 +25,7 @@ public class Main {
                     count++;
                 }
                 lastLeader = 1;
-            }else{
+            }else if(posB[i] > posA[i]){
                 if(lastLeader == 1){
                     count++;
                 }
