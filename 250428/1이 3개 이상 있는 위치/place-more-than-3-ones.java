@@ -25,7 +25,7 @@ public class Main {
         for(int x = 0; x < n; x++){
             for(int y = 0; y < n; y++){
                 int cnt = 0;
-                for(int i = 0; i < n; i++){
+                for(int i = 0; i < 4; i++){
                     nx = x + dx[i];
                     ny = y + dy[i];
                     if(inRange(nx,ny,n) && arr[nx][ny] == 1){
