@@ -13,7 +13,7 @@ public class Main {
         n = sc.nextInt();
         t = sc.nextInt();
 
-        int[][] arr = new int[n + 1][n + 1];
+        int[][] arr = new int[n+1][n+1];
 
         int r = sc.nextInt();
         int c = sc.nextInt();
@@ -21,10 +21,11 @@ public class Main {
 
         int dim = getDir(d);
 
-        for(int i = 0; i <= t; i++){
+        for(int i = 1; i <= t; i++){
             int nx = r + dx[dim], ny = c + dy[dim];
             if(!inRange(nx,ny)){
                 dim = 3 - dim;
+                continue;
             }
 
             r = r + dx[dim];
@@ -35,7 +36,7 @@ public class Main {
     }
 
     public static boolean inRange(int x, int y){
-        return (0 <= x && x <= n && 0 <= y && y <= n);
+        return (0 < x && x <= n && 0 < y && y <= n);
     }
 
     public static int getDir(char d){
