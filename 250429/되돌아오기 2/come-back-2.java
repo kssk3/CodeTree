@@ -14,22 +14,27 @@ public class Main {
         int len = s.length();
 
         int x = 0, y = 0;
-        
+        boolean result = false;
+
         for(int i = 0; i < len; i++){
             char c = s.charAt(i);
             int direction = getDirection(c);
 
-            if(c == 'L'){continue;}
-            if(c == 'R'){continue;}
-
+            if(c == 'L' || c == 'R'){continue;}
             
             x += dx[direction];
             y += dy[direction];
 
             if(x == 0 && y == 0){
-                System.out.println(time);
+                result = true;
                 break;
             }
+        }
+
+        if(result){
+            System.out.println(time);
+        }else{
+            System.out.println(-1);
         }
 
     }
