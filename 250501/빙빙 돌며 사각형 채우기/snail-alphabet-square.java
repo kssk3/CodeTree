@@ -34,7 +34,7 @@ public class Main {
             x += dx[dir];
             y += dy[dir];
             charArr[x][y] = (char)(start + count++);
-            if(count == 26){count = 1;}
+            if(count == 26){count = 0;}
         }
 
         for(int i = 0; i < n; i++){
