@@ -16,7 +16,8 @@ public class Main {
                     int a = arr[i];
                     int b = arr[j];
                     int c = arr[k];
-                    if(a < b && b < c){count++;}
+                    // System.out.println(a + " " + b + " " + c);
+                    if(a <= b && b <= c){count++;}
                 }
             }
         }
