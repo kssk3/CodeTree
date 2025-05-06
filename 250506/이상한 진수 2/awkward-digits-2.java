@@ -5,26 +5,29 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
 
-        Integer integer = (Integer) a;
+        if(a == 1){
+            System.out.println(0);
+            return;
+        }
 
-        String s = integer.toString();
+        String s = Integer.toString(a);
         int len = s.length();
-
+        
         String[] strArr = s.split("");
-
-        for(int i = 1; i < len; i++){
-            if(strArr[i] != "1"){
+        
+        for(int i = 0; i < len; i++){
+            if(!strArr[i].equals("1")){
                 strArr[i] = "1";
                 break;
             }
         }
+        
         s = "";
         for(int i = 0; i < len; i++){
             s += strArr[i];
         }
-
+        
         System.out.println(Integer.parseInt(s,2));
-
 
     }
 }
