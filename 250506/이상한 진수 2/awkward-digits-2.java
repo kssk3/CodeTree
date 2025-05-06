@@ -3,31 +3,24 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-
-        if(a == 1){
-            System.out.println(0);
-            return;
-        }
-
-        String s = Integer.toString(a);
-        int len = s.length();
+        String a = sc.next(); 
         
-        String[] strArr = s.split("");
-        
-        for(int i = 0; i < len; i++){
-            if(!strArr[i].equals("1")){
-                strArr[i] = "1";
-                break;
+        System.out.println(maxValueByFlippingOneBit(a));
+    }
+    
+    public static int maxValueByFlippingOneBit(String a) {
+        // 0을 1로 바꾸는 경우 (왼쪽에서 첫 번째 0을 찾아 1로 바꿈)
+        for (int i = 0; i < a.length(); i++) {
+            if (a.charAt(i) == '0') {
+                StringBuilder sb = new StringBuilder(a);
+                sb.setCharAt(i, '1');
+                return Integer.parseInt(sb.toString(), 2);
             }
         }
         
-        s = "";
-        for(int i = 0; i < len; i++){
-            s += strArr[i];
-        }
-        
-        System.out.println(Integer.parseInt(s,2));
-
+        // 모든 비트가 1인 경우 (맨 앞을 0으로 바꿈)
+        StringBuilder sb = new StringBuilder(a);
+        sb.setCharAt(a.length() - 1, '0');
+        return Integer.parseInt(sb.toString(), 2);
     }
 }
