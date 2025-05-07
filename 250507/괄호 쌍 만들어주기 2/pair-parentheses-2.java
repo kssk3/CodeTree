@@ -14,7 +14,7 @@ public class Main {
         int count = 0;
         for(int i = 0; i < len - 3; i++){
             if(arr[i] == '(' && arr[i + 1] == '('){    
-                for(int j = 1; j < len - 1; j++){
+                for(int j = 2 + i; j < len - 1; j++){
                     if(arr[j] == ')' && arr[j + 1] == ')'){
                         count++;
                     }
