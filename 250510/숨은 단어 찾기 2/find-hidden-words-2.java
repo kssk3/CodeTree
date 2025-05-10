@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Main {
 
-    public static int[] dx = {0, 1, 1, 1, 0, -1, -1, -1};
-    public static int[] dy = {1, 1, 0, -1, -1, -1, 0, 1};
+    public static int[] dx = {0, 1, 1,  1,  0, -1, -1, -1};
+    public static int[] dy = {1, 1, 0, -1, -1, -1,  0,  1};
 
     public static final int DIR = 8;
 
@@ -37,20 +37,20 @@ public class Main {
                         int nx = x + dx[k];
                         int ny = y + dy[k];
                         if(!isRange(nx,ny) ||charArr[nx][ny] != 'E'){break;}                    
-                            count++;
-                            x = nx;
-                            y = ny;
+                        count++;
+                        x = nx;
+                        y = ny;
+                        if(count == 3){break;}
                     }
-                    if(count == 3){totalCount++;}
+                    if(count == 3){
+                        totalCount++;
+                    }
                 }
             }
         }
         System.out.println(totalCount);
     }
-
     private static boolean isRange(int x, int y){
         return (0 <= x && x < n && 0 <= y && y < m);
     }
-
-    
 }
