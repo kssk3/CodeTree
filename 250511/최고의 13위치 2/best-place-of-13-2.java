@@ -23,18 +23,38 @@ public class Main {
 
         int[] findCoin = new int[n];
 
-        for(int i = 0; i < n; i++){
-            int max = 0;
-            for(int j = 0; j < n - 2; j++){
-                int count = 0;
-                for(int k = 0; k < 3; k++){
-                    if(arr[i][j + k] == 1){count++;}
+        if(n < 6){
+            for(int i = 0; i < n; i++){
+                int max = 0;
+                for(int j = 0; j < n - 2; j++){
+                    int count = 0;
+                    for(int k = 0; k < 3; k++){
+                        if(arr[i][j + k] == 1){count++;}
+                    }
+
+                    max = Math.max(max,count);
                 }
 
-                max = Math.max(max,count);
+                findCoin[i] = max;
             }
+        }else{
+            for(int i = 0; i < n; i++){
+                int max = 0;
+                for(int j = 0; j < n - 5; j++){
+                    int count = 0;
+                    for(int k = 0; k < 3; k++){
+                        if(arr[i][j + k] == 1){count++;}
+                    }
 
-            findCoin[i] = max;
+                    for(int l = 3; l < 6; l++){
+                        if(arr[i][j + l] == 1){count++;}
+                    }
+
+                    max = Math.max(max,count);
+                }
+
+                findCoin[i] = max;
+            }
         }
 
         Arrays.sort(findCoin);
