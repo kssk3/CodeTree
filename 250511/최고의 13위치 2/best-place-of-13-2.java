@@ -59,6 +59,10 @@ public class Main {
 
         Arrays.sort(findCoin);
 
-        System.out.println(findCoin[n-1] + findCoin[n-2]);
+        if(n < 6){
+            System.out.println(findCoin[n-1] + findCoin[n -2]);
+        }else{
+            System.out.println(findCoin[n-1]);
+        }
     }
 }
