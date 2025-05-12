@@ -13,22 +13,22 @@ public class Main {
         int s = sc.nextInt();
         // 배열 크기 설정
         int[] arr = new int[n];
-
+        
+        int sum = 0;
         for(int i = 0; i < n; i++){
             arr[i] = sc.nextInt();
+            sum += arr[i];
         }
 
         int closed = MAX;
+
         for(int i = 0; i < n; i++){
             for(int j = i + 1; j < n; j++){
-                for(int k = j + 1; k < n; k++){
-                    for(int l = k + 1; l < n; l++){
-                        int sum = arr[i] + arr[j] + arr[k] + arr[l];
-                        int number = Math.abs(s - sum);
-                        closed = Math.min(closed, number);
-                    }
-                }
+                int curSum = sum - (arr[i] + arr[j]);
+                int number = Math.abs(curSum - s);
+                closed = Math.min(closed, number);
             }
+
         }
         System.out.println(closed);
     }
