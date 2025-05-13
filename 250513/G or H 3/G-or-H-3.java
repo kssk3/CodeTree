@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Main {
 
-    public static final int MAX = 100;
+    public static final int MAX = 100_000;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -25,11 +25,8 @@ public class Main {
         int[] pos = new int[MAX];
 
         for(int i = 0; i < n; i++){
-            if(charArr[i] == 'G'){
-                pos[arr[i]] = 1;
-            }else{
-                pos[arr[i]] = 2;
-            }
+            if(charArr[i] == 'G'){pos[arr[i]] = 1;}
+            if(charArr[i] == 'H'){pos[arr[i]] = 2;}
         }
 
 
