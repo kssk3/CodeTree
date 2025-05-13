@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Main {
 
-    public static final int MAX = 100_000;
+    public static final int MAX = 10_001;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -31,15 +31,18 @@ public class Main {
 
 
         int maxCount = 0;
-        for(int i = 1; i <= max - k + 1; i++){
+        for(int i = 0; i < n; i++){
+            int start = arr[i];
+            int end = start + k;
+
             int point = 0;
-            for(int j = i; j <= i + k; j++){
+            for(int j = start; j <= max && j <= end; j++){
                 point += pos[j];
             }
+
             maxCount = Math.max(maxCount, point);
         }
 
-    System.out.println(maxCount);
-
+        System.out.println(maxCount);
     }
 }
