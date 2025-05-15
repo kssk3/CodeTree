@@ -34,6 +34,6 @@ public class Main {
     }
 
     private static boolean isRange(int n, int m){
-        return (1 <= n && n < 21 && 1 <= m && m < 21);
+        return (1 <= n && n < MAX && 1 <= m && m < MAX);
     }
 }
