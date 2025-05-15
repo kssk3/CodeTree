@@ -15,7 +15,7 @@ public class Main {
         for(int i = 0; i < n; i++){
             int a = sc.nextInt();
             int b = sc.nextInt();
-            arr[b] = a;
+            arr[b] += a;
         }
 
         int max = 0;
@@ -31,6 +31,7 @@ public class Main {
         }
 
         System.out.println(max);
+
     }
 
     private static boolean isRange(int n, int m){
