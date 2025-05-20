@@ -11,10 +11,16 @@ public class Main {
         
         int cnt = 0;
 
+        int q = 0;
+        int w = 0;
+        int e = 0;
         for(int i = 1; i <= n; i++){
+            q = Math.abs(a - i);
             for(int j = 1; j <= n; j++){
+                w = Math.abs(b - j);
                 for(int k = 1; k <= n; k++){
-                    if(i > a + 2 && j > b + 2 && k > c + 2){continue;}
+                    e = Math.abs(c - k);
+                    if(q > 2 && w > 2 && e > 2){continue;}
                     cnt++;
                 }
             }
