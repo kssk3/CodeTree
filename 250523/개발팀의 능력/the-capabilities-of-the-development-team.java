@@ -11,6 +11,10 @@ public class Main {
         for(int i = 0; i < 5; i++){
             arr[i] = sc.nextInt();
         }
+        int count = 0;
+        for(int i = 1; i < 5; i++){
+            if(arr[i - 1] == arr[i]){count++;}
+        }
 
         int min = MAX;
         for(int a = 0; a < 5; a++){
@@ -34,7 +38,7 @@ public class Main {
                 }
             }
         }
-        if(min == 0){
+        if(count == 4){
             System.out.println(-1);
         }else{
             System.out.println(min);
