@@ -11,37 +11,47 @@ public class Main {
         for(int i = 0; i < 5; i++){
             arr[i] = sc.nextInt();
         }
-        int count = 0;
-        for(int i = 1; i < 5; i++){
-            if(arr[i - 1] == arr[i]){count++;}
-        }
 
         int min = MAX;
+        boolean found = false;
+
         for(int a = 0; a < 5; a++){
             for(int b = a + 1; b < 5; b++){
                 for(int c = 0; c < 5; c++){
                     for(int d = c + 1; d < 5; d++){
-                        if(a == c || a == d || b == c || b == d){continue;}
-
-                        int e = 0;
+                        if(a == c || a == d || b == c || b == d) continue;
+                        
+                        int e = -1;
                         for(int i = 0; i < 5; i++){
-                            if(i == a || i == b || i == c || i == d){continue;}
-                            e = i;
+                            if(i != a && i != b && i != c && i != d){
+                                e = i;
+                                break;
+                            }
                         }
-
-                        int sum1 = arr[a] + arr[b];
-                        int sum2 = arr[c] + arr[b];
-                        int maxSum = Math.max(Math.max(sum1, sum2), e);
-                        int minSum = Math.min(Math.min(sum1, sum2), e);
-                        min = Math.min(min, maxSum - minSum);
+                        
+                        int sum1 = arr[a] + arr[b]; 
+                        int sum2 = arr[c] + arr[d];  
+                        int sum3 = arr[e];           
+                        
+                        if(sum1 != sum2 && sum2 != sum3 && sum1 != sum3){
+                            int maxSum = Math.max(Math.max(sum1, sum2), sum3);
+                            int minSum = Math.min(Math.min(sum1, sum2), sum3);
+                            int diff = maxSum - minSum;
+                            
+                            if(diff > 0) {
+                                min = Math.min(min, diff);
+                                found = true;
+                            }
+                        }
                     }
                 }
             }
         }
-        if(count == 4){
-            System.out.println(-1);
-        }else{
+        
+        if(found){
             System.out.println(min);
+        } else {
+            System.out.println(-1);
         }
     }
 }
