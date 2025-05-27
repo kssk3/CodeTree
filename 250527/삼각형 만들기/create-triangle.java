@@ -34,8 +34,13 @@ public class Main {
     }
 
     private static int getDiff(int i, int j, int k){
-        int x = Math.abs(xd[i] - xd[j] + xd[j] - xd[k]);
-        int y = Math.abs(yd[i] - yd[j] + yd[j] - yd[k]);
+        int minX = Math.min(Math.min(xd[i], xd[j]), xd[k]);
+        int maxX = Math.max(Math.max(xd[i], xd[j]), xd[k]);
+        int minY = Math.min(Math.min(yd[i], yd[j]), yd[k]);
+        int maxY = Math.max(Math.max(yd[i], yd[j]), yd[k]);
+        
+        int x = maxX - minX;
+        int y = maxY - minY;
 
         return x * y;
     }
