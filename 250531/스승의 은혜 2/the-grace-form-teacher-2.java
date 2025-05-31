@@ -24,7 +24,7 @@ public class Main {
 
                 total -= a;
                 // System.out.print(total + " ");
-                if(total > 0)cnt++;
+                if(total >= 0)cnt++;
             }
             max = Math.max(max, cnt);
             // System.out.print(max + "\n");
