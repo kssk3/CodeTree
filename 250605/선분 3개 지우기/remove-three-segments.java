@@ -10,8 +10,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         n = sc.nextInt();
 
-        dx = new int[n];
-        dy = new int[n];
+        dx = new int[1001];
+        dy = new int[1001];
 
         for(int i = 0; i < n; i++){
             dx[i] = sc.nextInt();
@@ -32,7 +32,7 @@ public class Main {
     }
 
     private static int getDiff(int a, int b, int c){
-        int[] counting = new int[n * 2];
+        int[] counting = new int[1001];
         for(int i = 0; i < n; i++){
             if(i == a || i == b || i == c)continue;
 
