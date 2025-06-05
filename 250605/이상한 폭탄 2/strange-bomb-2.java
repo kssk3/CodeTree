@@ -21,7 +21,7 @@ public class Main {
 
                 max = Math.max(arr[i], arr[j]);
                 if(arr[i] == arr[j]){
-                    ans = max;
+                    ans = Math.max(ans, max);
                 }
             }
         }
