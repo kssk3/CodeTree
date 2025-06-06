@@ -15,21 +15,22 @@ public class Main {
             dy[i] = sc.nextInt();
         }
 
+        Arrays.sort(dx);
+        Arrays.sort(dy);
+
         int max = 0;
         for(int i = 0; i < n; i++){
             int cost = b;
             int cnt = 0;
             for(int j = 0; j < n; j++){
-                if(i == j)dx[j] /= 2;
+                int currentDx = dx[j];
+                if(i == j) currentDx/= 2;
                 
-                cost -= dx[j];
+                cost -= currentDx;
                 cost -= dy[j];
                 if(cost < 0)break;
                 cnt++;
-                if(i == j)dx[j] *= 2;
-                // System.out.print(cost+ " ");
             }
-            // System.out.println();
             max = Math.max(max, cnt);
         }
 
