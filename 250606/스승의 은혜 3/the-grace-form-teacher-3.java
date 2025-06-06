@@ -15,25 +15,34 @@ public class Main {
             dy[i] = sc.nextInt();
         }
 
-        Arrays.sort(dx);
-        Arrays.sort(dy);
-
         int max = 0;
         for(int i = 0; i < n; i++){
+            int[][] costBoard = new int[n][2];
+            for(int j = 0; j < n; j++){
+                int totalCost = dx[j] + dy[j];
+                if(i == j){
+                    totalCost = dx[j]/2 + dy[j];
+                }
+                costBoard[j][0] = totalCost;
+                costBoard[j][1] = j;
+            }
+
+            Arrays.sort(costBoard, (q, w) -> q[0] - w[0]);
+
             int cost = b;
             int cnt = 0;
+
+
             for(int j = 0; j < n; j++){
-                int currentDx = dx[j];
-                if(i == j) currentDx/= 2;
-                
-                cost -= currentDx;
-                cost -= dy[j];
-                if(cost < 0)break;
-                cnt++;
+                if(cost >= costBoard[j][0]){
+                    cost -= costBoard[j][0];
+                    cnt++;
+                }else{
+                    break;
+                }
             }
             max = Math.max(max, cnt);
         }
-
         System.out.println(max);
     }
 }
