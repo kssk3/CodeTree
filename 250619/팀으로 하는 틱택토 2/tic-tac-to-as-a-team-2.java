@@ -9,37 +9,39 @@ public class Main {
         for(int i = 0; i < 3; i++){
             String s = Integer.toString(sc.nextInt());
             String[] srr = s.split("");
-
             for(int j = 0; j < 3; j++){
                 board[i][j] = Integer.parseInt(srr[j]);
             }
         }
 
         int cnt = 0;
-        for(int a = 0; a < 3; a++){
-
-            for(int i = 0; i < 3; i++){
-                for(int j = i + 1; j < 3; j++){
-                    for(int k = j + 1; k < 3; k++){
-
-                        if(((board[a][i] == board[a][j]) && (board[a][i] != board[a][k])) ||
-                        ((board[a][i] != board[a][j]) && (board[a][j] == board[a][k])) ||
-                        (board[a][i] == board[a][k]) && (board[a][i] != board[a][j]) ){
-                            cnt++;
-                        }else if(((board[i][a] == board[j][a]) && (board[i][a] != board[k][a])) || 
-                        ((board[i][a] != board[j][a]) && (board[j][a] == board[k][a])) || 
-                        ((board[i][a] == board[k][a]) && (board[i][a] != board[j][a]))){
-                            cnt++;
-                        }else if(((board[a][i] == board[j][j]) && (board[a][i] != board[k][k])) ||
-                        ((board[a][i] != board[j][j]) && (board[j][j] == board[k][k])) || 
-                        ((board[a][i] == board[k][k]) && (board[i][i] != board[j][j]))){
-                            cnt++;
-                        }
-                    }
-                }
-            }
+        for(int i = 0; i < 3; i++){
+            if(isWingLine(board[i][0], board[i][1], board[i][2]))cnt++;
         }
 
+        for(int i = 0; i < 3; i++){
+            if(isWingLine(board[0][i], board[1][i], board[2][i]))cnt++;
+        }
+
+        if(isWingLine(board[0][0], board[1][1], board[2][2]))cnt++;
+
+        if(isWingLine(board[0][2], board[1][1], board[2][0]))cnt++;
+
         System.out.println(cnt);
+    }
+
+    private static boolean isWingLine(int a, int b, int c){
+        int[] count = new int[10];
+
+        count[a]++;
+        count[b]++;
+        count[c]++;
+        
+        for(int i = 0; i < 10; i++){
+            if(count[i] == 2){
+                return true;
+            }
+        }
+        return false;
     }
 }
