@@ -16,26 +16,22 @@ public class Main {
             boom[i] = sc.nextInt();
         }
 
-        int[] arr = new int[MAX];
+        int[] arr = new int[MAX];    
 
-        int ans = 0;
         for(int i = 0; i < n; i++){
-            int num = boom[i];
-            boolean result = false;
-
-            int cnt = 0;
-            for(int j = i + 1; j < n; j++){
-                if(num == boom[j] && j - i <= k){
-                    result = true;
-                    cnt++;
-                }
-
-                if(num != boom[j] || j - i > k){
-                    continue;
+            for(int j = i + 1; j < n && j - i <= k; j++){
+                if(boom[i] == boom[j]){
+                    arr[boom[i]]++;
                 }
             }
+        }
 
-            if(result){ans = num;}
+        int maxCount = 0, ans = 0;
+        for(int i = 0; i < MAX; i++){
+            if(arr[i] > maxCount || (arr[i] == maxCount && ans < 1)){
+                maxCount = arr[i];
+                ans = i;
+            }
         }
 
         System.out.println(ans);
