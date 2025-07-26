@@ -17,28 +17,19 @@ public class Main {
         }
 
         int ans = Integer.MAX_VALUE;
-        for(int i = 1; i <= n; i++){
-            int[] brr = Arrays.copyOf(arr, n);
-            Arrays.sort(brr);
-
-            int cost = 0;
-            for(int j = 0; j < n; j++){
-                if(brr[j] != max && brr[j] != min)continue;
-
-                if(brr[j] == max){
-                    brr[j] = brr[j] - i;
-                    cost += i;
+        for(int i = min; i <= max; i++){
+            int a = i + k;
+            if(a <= max){
+                int cost = 0;
+                for(int j = 0; j < n; j++){
+                    if(arr[j] > a || arr[j] < i){
+                        cost += Math.min(Math.abs(arr[j] - a), Math.abs(arr[j] - i));
+                    }
                 }
-
-                if(brr[j] == min){
-                    brr[j] = brr[j] + i;
-                    cost += i;
-                }
-            }
-            if(brr[n - 1] - brr[0] <= k){
-                ans = Math.min(ans, cost);
+                if(cost < ans)ans = cost;
             }
         }
+
         System.out.println(ans);
     }
 }
