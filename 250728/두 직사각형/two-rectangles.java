@@ -28,7 +28,7 @@ public class Main {
         a2 = sc.nextInt();
         b2 = sc.nextInt();
 
-        if(((a1 < x2) && (b1 < y2)) || ((x1 < a1) && (y1 < b2))){
+        if(((a1 < x2) && (b1 < y2)) && ((x1 < a1) && (y1 < b2))){
             return true;
         }else{
             return false;
