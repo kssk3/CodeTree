@@ -28,10 +28,10 @@ public class Main {
         a2 = sc.nextInt();
         b2 = sc.nextInt();
 
-        if(((a1 < x2) && (b1 < y2)) && ((x1 < a1) && (y1 < b2))){
-            return true;
-        }else{
+        if(a2 < x1 || b2 < y1 || x2 < a1 || y2 < b1){
             return false;
+        }else{
+            return true;
         }
     }
 }
