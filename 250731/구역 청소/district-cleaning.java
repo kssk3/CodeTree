@@ -13,15 +13,21 @@ public class Main {
         int x2 = sc.nextInt();
         int y2 = sc.nextInt();
 
-        int result = cleanSpace(x1, y1, x2, y2);
-        System.out.println(result);
-    }
+        int[] arr = new int[MAX];
 
-    private static int cleanSpace(int a, int b, int c, int d){
-        if(a > c && b > d)return b - c;
-        if(a > c && d > b)return d - c;
-        if(c > a && b > d)return b - a;
-        if(c > a && d > b)return d - a;
-        return 0;
+        for(int i = x1; i < y1; i++){
+            arr[i] = 1;
+        }
+
+        for(int i = x2; i < y2; i++){
+            arr[i] = 1;
+        }
+
+        int cnt = 0;
+        for(int a : arr){
+            if(a == 1){cnt++;}
+        }
+
+        System.out.println(cnt);
     }
 }
