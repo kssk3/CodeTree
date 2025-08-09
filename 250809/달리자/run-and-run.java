@@ -9,32 +9,29 @@ public class Main {
 
         n = sc.nextInt();
 
-        int[] arr = new int[n + 1];
-        int[] brr = new int[n + 1];
+        int[] arr = new int[n];
+        int[] brr = new int[n];
 
         insertIndex(arr, sc);
         insertIndex(brr, sc);
 
-        int[] crr = new int[n + 1];
-        for(int i = 1; i <= n; i++){
+        int[] crr = new int[n];
+        for(int i = 0; i < n; i++){
             crr[i] = arr[i] - brr[i];
         }
 
         int ans = 0;
-        for(int i = 1; i <= n; i++){
-            if(crr[i] > 0 && crr[n] < 0){
-                crr[n] = crr[n] - crr[i];
-                ans += (n - i) * crr[i];
-            }
-
-            if(crr[i] == 0)continue;
+        int num = 0;
+        for(int i = 0; i < n; i++){
+            num += crr[i];
+            ans += Math.abs(num);
         }
 
         System.out.println(ans);
     }
 
     private static void insertIndex(int[] arr, Scanner sc){
-        for(int i = 1; i <= n; i++){
+        for(int i = 0; i < n; i++){
             arr[i] = sc.nextInt();
         }
     }
