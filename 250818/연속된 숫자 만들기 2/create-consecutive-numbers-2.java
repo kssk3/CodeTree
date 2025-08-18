@@ -10,6 +10,8 @@ public class Main {
 
         int[] arr = {a, b, c};
 
+        Arrays.sort(arr);
+        
         if((arr[0] + 1 == arr[1]) && (arr[1] + 1 == arr[2])){
             System.out.println(0);
         }else if(arr[1] + 2 == arr[0] || arr[1] + 2 == arr[2]){
