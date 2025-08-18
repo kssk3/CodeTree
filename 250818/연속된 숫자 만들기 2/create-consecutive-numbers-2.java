@@ -12,7 +12,7 @@ public class Main {
 
         if((arr[0] + 1 == arr[1]) && (arr[1] + 1 == arr[2])){
             System.out.println(0);
-        }else if(((arr[1] + 2 == arr[0]) && (arr[1] + 1 == arr[2])) || ((arr[0] + 2 == arr[1]) && (arr[1] - 1 == arr[2]))){
+        }else if(arr[1] + 2 == arr[0] || arr[1] + 2 == arr[2]){
             System.out.println(1);
         }else{
             System.out.println(2);
