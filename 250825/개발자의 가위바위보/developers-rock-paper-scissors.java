@@ -19,7 +19,7 @@ public class Main {
         int maxWin = 0;
         for(int x = 1; x <= 3; x++){
             for(int y = 1; y <= 3; y++){
-                if(a == b)continue;
+                if(x == y)continue;
 
                 int win = 0;
                 for(int i = 0; i < n; i++){
@@ -27,7 +27,7 @@ public class Main {
 
                     if(a[i] == x && b[i] == y)win++;
                     if(a[i] == y && b[i] != x && b[i] != y)win++;
-                    if(a[i] != x && a[i] != y && b[i] == y)win++;
+                    if(a[i] != x && a[i] != y && b[i] == x)win++;
                 }
 
                 maxWin = Math.max(maxWin, win);
