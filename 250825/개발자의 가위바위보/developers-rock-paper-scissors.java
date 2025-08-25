@@ -23,11 +23,11 @@ public class Main {
 
                 int win = 0;
                 for(int i = 0; i < n; i++){
-                    if(a[i] == b[i])continue;
-
+                    // if(a[i] == b[i])continue;
+                    int z = 6 - x - y;
                     if(a[i] == x && b[i] == y)win++;
-                    if(a[i] == y && b[i] != x && b[i] != y)win++;
-                    if(a[i] != x && a[i] != y && b[i] == x)win++;
+                    if(a[i] == y && b[i] == z)win++;
+                    if(a[i] == z && b[i] == x)win++;
                 }
 
                 maxWin = Math.max(maxWin, win);
