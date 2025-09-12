@@ -11,22 +11,16 @@ public class Main {
             Alphabets[i] = sc.next().charAt(0);
         }
 
-        char[] findResult = Alphabets.clone();
-        Arrays.sort(Alphabets);
-
         int ans = 0;
         for(int i = 0; i < n; i++){
-            if(Alphabets[i] == findResult[i])continue;
-
-            for(int j = i + 1; j < n; j++){
-                // 'A', 'B', 'C', 'D' == Alphabets;
-                // 'A', 'D', 'B', 'C' == findResult;
-                findResult[j] = findResult[i];
-                findResult[i] = Alphabets[i];
-                ans++;
-                break;
+            for(int j = 0; j < n - 1; j++){
+                if(Alphabets[j] > Alphabets[j + 1]){
+                    char tmp = Alphabets[j];
+                    Alphabets[j] = Alphabets[j + 1];
+                    Alphabets[j + 1] = tmp;
+                    ans++;
+                }
             }
-
         }
 
         System.out.println(ans);
