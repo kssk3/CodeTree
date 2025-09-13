@@ -13,7 +13,7 @@ public class Main {
             char target = sc.next().charAt(0);
             int num = sc.nextInt();
 
-            // System.out.print("ans = " + ans);
+            //System.out.print("ans = " + ans);
             int tmp = 0;
             if(target == 'A'){
                 tmp = cntA;
@@ -25,24 +25,14 @@ public class Main {
                 cntB += num;
             }
 
-            // System.out.println(" target = " + target + ", num = " + num + ", cntA = " + cntA + ", cntB = " + cntB);
+            //System.out.println(" target = " + target + ", num = " + num + ", cntA = " + cntA + ", cntB = " + cntB);
             if(target == 'A' && tmp > cntB && num > 0)continue;
             if(target == 'A' && tmp <= cntB && num > 0 && cntA >= cntB)ans++;
-            if(target == 'A' && tmp >= cntB && num < 0 && cntA < cntB)ans++;
+            if(target == 'A' && tmp >= cntB && num < 0 && cntA <= cntB)ans++;
 
             if(target == 'B' && tmp > cntA && num > 0)continue;
             if(target == 'B' && tmp <= cntA && num > 0 && cntB >= cntA)ans++;
-            if(target == 'B' && tmp >= cntA && num < 0 && cntA > cntB)ans++;
-
-            // if(target == 'A' && tmp < cntB && cntA > cntB)ans++;// target = 'A', num = +1, tmp == cntB, cntA = 1, cntB = 0, ans++;
-            // if(target == 'A' && tmp > cntB && num > 0)continue;
-            // if(target == 'A' && tmp <= cntB && num > 0 && cntA => cntB)ans++;
-            // if(target == 'A' && tmp => cntB && num < 0 && cntA < cntB)ans++;
-
-            // if(target == 'B' && tmp < cntA && cntA =< cntB)ans++;// target = 'B', num = +1, tmp = -1, cntA= 0, cntB = 0, ans++;
-            // if(target == 'B' && tmp > cntA && num > 0)continue; // tmp = 1, cntA = -1, cntB = 1
-            // if(target == 'B' && tmp <= cntA && num > 0 && cntB = cntA)ans++;
-            // if(target == 'B' && tmp => cntA && num < 0 && cntA > cntB)ans++;
+            if(target == 'B' && tmp >= cntA && num < 0 && cntA >= cntB)ans++;
         }
 
         System.out.println(ans);
