@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,11 +9,7 @@ public class Main {
             arr[i] = sc.nextInt();
         }
 
-
-        // 4, 5, 11
-        // -9, 15, -20  
-        // -11 -9 -125 -999 -456 -17
-
+        Arrays.sort(arr);
 
         int ans = 0;
         for(int i = 0; i < n; i++){
@@ -21,9 +17,9 @@ public class Main {
                 for(int k = j + 1; k < n; k++){
                     int num = arr[i] * arr[j] * arr[k];
 
-                    if(num > 0)ans = Math.max(ans, num);
-                    if(ans == 0 && num < 0)ans = num;
-                    if(ans != 0 && num < 0)if(Math.abs(num) > ans)ans = Math.max(ans, num);
+                    if(ans == 0 && num < 0)ans = Math.min(ans, num);
+                    if(ans == 0 && 0 < num)ans = Math.max(ans, num);
+                    if(ans != 0 && (num <= 0 || num >= 0))ans = Math.max(ans, num);
                 }
             }
         }
