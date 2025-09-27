@@ -10,20 +10,10 @@ public class Main {
         }
 
         Arrays.sort(arr);
-
-        int ans = 0;
-        for(int i = 0; i < n; i++){
-            for(int j = i + 1; j < n; j++){
-                for(int k = j + 1; k < n; k++){
-                    int num = arr[i] * arr[j] * arr[k];
-
-                    if(ans == 0 && num < 0)ans = Math.min(ans, num);
-                    if(ans == 0 && 0 < num)ans = Math.max(ans, num);
-                    if(ans != 0 && (num <= 0 || num >= 0))ans = Math.max(ans, num);
-                }
-            }
-        }
-
+        int case1 = arr[n - 1] * arr[n -2] * arr[n - 3]; // + + +
+        int case2 = arr[0] * arr[1] * arr[n - 1]; // - - +; 
+        int case3 = arr[0] * arr[1] * arr[2];
+        int ans = Math.max(case1, Math.max(case2, case3));
         System.out.println(ans);
     }
 }
